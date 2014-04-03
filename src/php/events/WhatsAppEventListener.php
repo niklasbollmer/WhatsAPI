@@ -203,6 +203,11 @@ interface WhatsAppEventListener {
         $from, // The users number who went online/offline
         $status  // contains: "unavailable" for offline, nothing ("") for online
     );
+
+	function onRecordingAudio (
+		$phone, // The user phone number including the country code.
+		$from // The users number who started audio recording
+	);
 	
     function onGetPrivacyBlockedList(
         $phone, // The user phone number including the country code.

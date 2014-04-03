@@ -473,6 +473,13 @@ abstract class WhatsAppEventListenerProxy implements WhatsAppEventListener {
         $this->handleEvent(__FUNCTION__, func_get_args());
     }
 	
+	function onRecordingAudio(
+        $phone,
+        $from
+    ) {
+        $this->handleEvent(__FUNCTION__, func_get_args());
+    }	
+	
     public function onGetStatus(
         $phone, 
         $from, 

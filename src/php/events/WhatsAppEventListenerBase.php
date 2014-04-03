@@ -380,6 +380,11 @@ class WhatsAppEventListenerBase implements WhatsAppEventListener {
         $status
     ) {}
 	
+	function onRecordingAudio( 
+		$phone,
+		$from
+	) {}
+	
     public function onGetStatus(
         $phone, 
         $from, 

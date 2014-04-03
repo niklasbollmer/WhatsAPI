@@ -1852,6 +1852,14 @@ class WhatsProt
                 $node->getAttribute('type')
             );
 		}
+		if ($node->getTag() == "chatstate" && $node->getChild('composing')) {
+			if($node->getChild('composing')->getAttribute('media') == "audio") {
+				$this->eventManager()->fireOnRecordingAudio(
+					$this->phoneNumber,
+					$node->getAttribute('from')
+				);
+			}
+		}	
 		if ($node->getTag() == "message") {
             array_push($this->messageQueue, $node);
 
