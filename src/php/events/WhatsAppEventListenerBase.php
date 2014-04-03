@@ -374,6 +374,12 @@ class WhatsAppEventListenerBase implements WhatsAppEventListener {
         $groupList
     ) {}
 
+	function onGetOnlineStatus(
+        $phone,
+        $from,
+        $status
+    ) {}
+	
     public function onGetStatus(
         $phone, 
         $from, 

@@ -396,6 +396,17 @@ class WhatsAppEvent
         $this->fireCallback($callbackEvent);          
     }
 
+	function fireGetOnlineStatus(
+		$phone,
+		$from,
+		$status         
+    ) {
+        $callbackEvent = function(WhatsAppEventListener $listener) use ($phone, $from, $status) { 
+            $listener->onGetOnlineStatus($phone, $from, $status);
+        };
+        $this->fireCallback($callbackEvent);          
+    }
+	
     function fireGetGroupParticipants(
         $phone,
         $groupId,

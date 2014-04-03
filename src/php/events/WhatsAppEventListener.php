@@ -198,6 +198,12 @@ interface WhatsAppEventListener {
         $groupList            
     );
     
+	function onGetOnlineStatus(
+        $phone,  // The user phone number including the country code.
+        $from, // The users number who went online/offline
+        $status  // contains: "unavailable" for offline, nothing ("") for online
+    );
+	
     function onGetPrivacyBlockedList(
         $phone, // The user phone number including the country code.
         $children

@@ -1845,7 +1845,14 @@ class WhatsProt
                 $node->getAttribute('class')
             );
         }
-        if ($node->getTag() == "message") {
+		if ($node->getTag() == "presence") {
+			$this->eventManager()->fireGetOnlineStatus(
+                $this->phoneNumber,
+                $node->getAttribute('from'),
+                $node->getAttribute('type')
+            );
+		}
+		if ($node->getTag() == "message") {
             array_push($this->messageQueue, $node);
 
             if ($node->hasChild('x') && $this->lastId == $node->getAttribute('id')) {

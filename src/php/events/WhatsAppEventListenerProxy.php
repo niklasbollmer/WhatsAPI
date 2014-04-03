@@ -465,6 +465,14 @@ abstract class WhatsAppEventListenerProxy implements WhatsAppEventListener {
         $this->handleEvent(__FUNCTION__, func_get_args()); 
     }
 
+	function onGetOnlineStatus(
+        $phone,
+        $from,
+        $status
+    ) {
+        $this->handleEvent(__FUNCTION__, func_get_args());
+    }
+	
     public function onGetStatus(
         $phone, 
         $from, 
